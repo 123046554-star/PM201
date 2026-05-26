@@ -40,6 +40,43 @@ function mostrarMenu() {
 
 }
 
+//funcion para mostrar el estado del pedido 
+function estadoPedido(cancelado = false) {
+
+    console.log("Estado: Pedido recibido");
+
+    if (cancelado) {
+
+        setTimeout(() => {
+
+            console.log("Estado: Pedido cancelado");
+
+        }, 2000);
+
+    } else {
+
+        setTimeout(() => {
+
+            console.log("Estado: Preparando pedido...");
+
+        }, 2000);
+
+        setTimeout(() => {
+
+            console.log("Estado: Empacando pedido...");
+
+        }, 4000);
+
+        setTimeout(() => {
+
+            console.log("Estado: Pedido entregado");
+
+        }, 6000);
+
+    }
+
+}
+
 // Inicializa el menu
 async function iniciarMenu() {
 
@@ -68,6 +105,8 @@ async function iniciarMenu() {
             );
 
             caja.agregarPedido(id);
+
+            estadoPedido();
 
         } else if (opcion === "3") {
 

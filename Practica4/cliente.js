@@ -2,8 +2,8 @@
 
 const readline = require("node:readline/promises");
 
-const cocina = require("./cocina");
-const caja = require("./caja");
+const cocina = require("../cocina");
+const caja = require("../caja");
 
 const consola = readline.createInterface({
     input: process.stdin,

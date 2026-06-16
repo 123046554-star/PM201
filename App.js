@@ -13,8 +13,9 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Perfil nombre= "Dulce" carrera="Sistemas" materia =" Movil" cuatri="9"/>
-      <Perfil nombre= "mmmm" carrera="Sistemas" materia =" Movil" cuatri="9"/>
+      <Perfil style={styles.tarjetaVerde} nombre= "Dulce" carrera="Sistemas" materia =" Movil" cuatri="9"/>
+      <Perfil style={styles.tarjetaRoja} nombre= "mmmm" carrera="Sistemas" materia =" Movil" cuatri="9"/>
+      <Perfil style={styles.tarjetaRoja} nombre= "mmmm" carrera="Sistemas" materia =" Movil" cuatri="9"/>
 
       <StatusBar style="auto" /> 
 
@@ -28,6 +29,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+
+
+
+    // Actividad
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+
+
   },
+  tarjetaVerde:{backgroundColor:'#6BCB77'},
+  tarjetaRoja:{backgroundColor:'#FF6B6B'},
 });

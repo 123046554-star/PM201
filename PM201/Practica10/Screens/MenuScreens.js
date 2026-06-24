@@ -6,6 +6,8 @@ import TarjetasScreen from './TarjetasScreens';
 import { Componente1 } from './Componente1';
 import ComponentesNativosScreen from './ComponentesNativosScreens';
 import SafeAreaScrollScreen from './SafeAreaScrollScreen';
+import PressableScreen from './PressableScreens';
+import SwitchScreen from './SwitchSreen';
 
 
 //import { Component } from 'react';
@@ -23,15 +25,21 @@ export default function App() {
             return <ComponentesNativosScreen />;
         case 'safearea':
             return <SafeAreaScrollScreen />;
+        case 'Pressable':
+            return <PressableScreen/>;
+        case 'Switch':
+            return <SwitchScreen/>;
         case 'menu':
         default:
             return(
                 <View>
-                    <Text>Menu Practica</Text>
+                    <Text>Menú Práctica</Text>
                     <Button title="practica Tarjetas" onPress={()=>setScreen('tarjetas')}/>
                     <Button title="practica Componente1" onPress={()=>setScreen('componente1')}/>
                     <Button title="Practica Componentes Nativos" onPress={() => setScreen('componentesNativos')}/>
                     <Button title="Practica SafeAreaView y ScrollView" onPress={() => setScreen('safearea')}/>
+                    <Button title="Practica Pressable" onPress={() => setScreen('Pressable')}/>
+                    <Button title="Practica Switch" onPress={() => setScreen('Switch')}/>
                 </View>
             );
     } //switch

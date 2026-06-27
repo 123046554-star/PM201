@@ -8,6 +8,9 @@ import ComponentesNativosScreen from './ComponentesNativosScreens';
 import SafeAreaScrollScreen from './SafeAreaScrollScreen';
 import PressableScreen from './PressableScreens';
 import SwitchScreen from './SwitchSreen';
+import Componente4_0 from './Componente4_0';
+import ComponenteAlert from './ComponenteAlert';
+
 
 
 //import { Component } from 'react';
@@ -29,6 +32,10 @@ export default function App() {
             return <PressableScreen/>;
         case 'Switch':
             return <SwitchScreen/>;
+       case 'Componente4_0':
+            return <Componente4_0/>;
+        case 'ComponenteAlert':
+            return <ComponenteAlert/>;
         case 'menu':
         default:
             return(
@@ -40,6 +47,9 @@ export default function App() {
                     <Button title="Practica SafeAreaView y ScrollView" onPress={() => setScreen('safearea')}/>
                     <Button title="Practica Pressable" onPress={() => setScreen('Pressable')}/>
                     <Button title="Practica Switch" onPress={() => setScreen('Switch')}/>
+                    <Button title="Practica Componente" onPress={() => setScreen('Componente4_0')}/>
+                    <Button title="Practica ComponenteAlert" onPress={() => setScreen('ComponenteAlert')}/>
+
                 </View>
             );
     } //switch

@@ -10,6 +10,9 @@ import PressableScreen from './PressableScreens';
 import SwitchScreen from './SwitchSreen';
 import Componente4_0 from './Componente4_0';
 import ComponenteAlert from './ComponenteAlert';
+import FlatListScreen from './FlatListScreen';
+import SectionListScreen from './SectionListScreen';
+
 
 
 
@@ -36,6 +39,10 @@ export default function App() {
             return <Componente4_0/>;
         case 'ComponenteAlert':
             return <ComponenteAlert/>;
+        case 'FlatList':
+            return <FlatListScreen/>;
+        case 'SectionList':
+            return <SectionListScreen/>;
         case 'menu':
         default:
             return(
@@ -49,6 +56,8 @@ export default function App() {
                     <Button title="Practica Switch" onPress={() => setScreen('Switch')}/>
                     <Button title="Practica Componente" onPress={() => setScreen('Componente4_0')}/>
                     <Button title="Practica ComponenteAlert" onPress={() => setScreen('ComponenteAlert')}/>
+                    <Button title="Practica FlatListScreen" onPress={() => setScreen('FlatListScreen')}/>
+                    <Button title="Practica SectionListScreen" onPress={() => setScreen('SectionListScreen')}/>
 
                 </View>
             );

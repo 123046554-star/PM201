@@ -1,7 +1,7 @@
 //Zona 1: Importación de archivos y Componentes
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Button } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import TarjetasScreen from './TarjetasScreens';
 import { Componente1 } from './Componente1';
 import ComponentesNativosScreen from './ComponentesNativosScreens';
@@ -12,7 +12,8 @@ import Componente4_0 from './Componente4_0';
 import ComponenteAlert from './ComponenteAlert';
 import FlatListScreen from './FlatListScreen';
 import SectionListScreen from './SectionListScreen';
-
+import { SplashScreen } from './SplashScreen';
+import { Home } from './Home';
 
 
 
@@ -22,6 +23,17 @@ import SectionListScreen from './SectionListScreen';
 //Zona 2: Main Lugar donde estan los componentes del screen
 export default function App() {
     const [screen, setScreen]=useState('menu');
+
+        useEffect(() => {
+        if (screen === 'splashScreen') {
+            const timer = setTimeout(() => {
+                setScreen('home');
+            }, 6000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [screen]);
+
     switch (screen){
         case 'tarjetas':
             return <TarjetasScreen/>;
@@ -43,6 +55,10 @@ export default function App() {
             return <FlatListScreen/>;
         case 'SectionList':
             return <SectionListScreen/>;
+        case 'splashScreen':
+            return <SplashScreen />;
+        case 'home':
+            return <Home />;
         case 'menu':
         default:
             return(
@@ -56,8 +72,13 @@ export default function App() {
                     <Button title="Practica Switch" onPress={() => setScreen('Switch')}/>
                     <Button title="Practica Componente" onPress={() => setScreen('Componente4_0')}/>
                     <Button title="Practica ComponenteAlert" onPress={() => setScreen('ComponenteAlert')}/>
-                    <Button title="Practica FlatListScreen" onPress={() => setScreen('FlatListScreen')}/>
-                    <Button title="Practica SectionListScreen" onPress={() => setScreen('SectionListScreen')}/>
+                    <Button title="Practica FlatListScreen" onPress={() => setScreen('FlatList')}/>
+                    <Button title="Practica SectionListScreen" onPress={() => setScreen('SectionList')}/>
+                    <Button
+                        title="Practica Splash"
+                        onPress={() => setScreen('splashScreen')}
+                    />
+                    
 
                 </View>
             );
